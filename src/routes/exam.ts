@@ -48,7 +48,8 @@ const ExamRoute: FastifyPluginAsync = async (fastify: FastifyInstance, options: 
         try {
             const exams = await Exam.find(
                 {
-                    'users.id': req.body.auth.id
+                    'users.id': req.body.auth.id,
+                    hasBegun: true
                 },
             )
 

@@ -9,7 +9,7 @@ const PingRoute: FastifyPluginAsync = async (fastify: FastifyInstance, options: 
 
     fastify.get('/api/ping', async (req, rep) => {
         req.log.info({ actor: 'Route: ping' }, 'Ping')
-        return rep.code(200).send({statusCode: 200, data: { ok: true, msg: 'Pong!', time: rep.getResponseTime(), server: 'st-helper-server' }})
+        return rep.code(200).send({statusCode: 200, data: { ok: true, msg: 'Pong!', time: rep.elapsedTime, server: 'st-helper-server' }})
     })
 
 }
